@@ -1,0 +1,175 @@
+/* This is an additional stylesheet for the Financial Calculations site*/
+
+
+/* Stylesheet code from the Bootstrap Jumbotron template */
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+
+/* Color and bottom padding change for the Jumbotron section */
+
+.jumbotron {
+    background-image: url("../images/iStock-873507500_large.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 2rem 1rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #6fbb4c;
+    border-radius: 0.3rem;
+    min-height: 300px;
+}
+
+
+/* Formatting for the Header */
+
+header,
+h2,
+h3 {
+    text-align: center;
+}
+
+legend {
+    font-weight: bold;
+}
+
+body {
+    height: 100%;
+    background-color: #90c07a;
+    background-image: linear-gradient(white, #b6c4b0, #90c07a);
+    background-repeat: no-repeat;
+}
+
+
+/* Formatting for the Footer */
+
+footer {
+    clear: left;
+    border-top: thin solid darkgreen;
+    text-align: right;
+}
+
+fieldset {
+    display: block;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 5px groove;
+}
+
+form {
+    text-align: left;
+}
+
+
+/* Fix links so that they are underlined when one hovers over them */
+
+.nav-link:hover,
+.nav-link:focus {
+    text-decoration: underline;
+}
+
+.nav-item {
+    font-weight: bold;
+    color: black;
+}
+
+.btn-margin {
+    margin: auto;
+    display: inline;
+}
+
+#errorMsg {
+    color: red;
+    font-weight: bold;
+}
+
+#updateCancelButtons {
+    display: none;
+}
+
+#courseLink {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#msgDiv {
+    color: darkred;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.firstRow {
+    font-weight: bold;
+}
+
+.justifycenter {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* Extra-Small devices (landscape phones, 576px and down) */
+
+@media (max-width: 576px) {
+    #subHeading {
+        font-style: italic;
+        color: white;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+    #subHeading {
+        font-style: italic;
+        color: white;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    #subHeading {
+        font-style: italic;
+        color: black;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    #subHeading {
+        font-style: italic;
+        color: black;
+    }
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    #subHeading {
+        font-style: italic;
+        color: black;
+    }
+}
