@@ -1,7 +1,7 @@
 # Learning is Fun!
 Our fourth Friday Project! A site to search for and register for continuing education courses at a community center.
 
-![IndexPage](images/learningisfunscreenshot.jpg?raw=true "IndexPage")
+![IndexPage](public/images/learningisfunscreenshot.jpg?raw=true "IndexPage")
 
 
 ## Purpose and goals of this site
