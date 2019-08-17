@@ -80,7 +80,9 @@ $(function() {
                             } // end of if for table load
                         } // end of for (table)
                         $("#btnRegister").on("click", registerForCourse);
-                        //when REGISTER button is clicked:
+                        // when the REGISTER button is clicked, the url created in 
+                        // the function createDetailTable sends the user to the
+                        // registration page.
                         function registerForCourse() {
                             location.href = url;
                         } // end of registerForCourse Function
