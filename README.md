@@ -3,7 +3,6 @@ Our fourth Friday Project! A site to search for and register for continuing educ
 
 ![IndexPage](public/images/learningisfunscreenshot.jpg?raw=true "IndexPage")
 
-
 ## Purpose and goals of this site
 - To give information about continuing education courses
 - To provide students a place to register for the courses
