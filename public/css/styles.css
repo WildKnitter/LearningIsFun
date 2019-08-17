@@ -42,10 +42,6 @@ h3 {
     text-align: center;
 }
 
-legend {
-    font-weight: bold;
-}
-
 body {
     height: 100%;
     background-color: #90c07a;
@@ -85,9 +81,10 @@ form {
     text-decoration: underline;
 }
 
-.nav-item {
-    font-weight: bold;
+.nav-link.disabled {
     color: black;
+    pointer-events: none;
+    cursor: default;
 }
 
 .btn-margin {
@@ -95,13 +92,14 @@ form {
     display: inline;
 }
 
-#errorMsg {
-    color: red;
+.navbar-black {
+    color: black;
     font-weight: bold;
 }
 
-#updateCancelButtons {
-    display: none;
+#errorMsg {
+    color: red;
+    font-weight: bold;
 }
 
 #courseLink {
