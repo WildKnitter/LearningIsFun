@@ -37,7 +37,7 @@ $(function() {
                     let courseOption = $("<option>", { text: categ[i].Category, value: categ[i].Value });
                     $("#courseChoice").append(courseOption);
                 } // end of for
-                createCourseTable();
+                createCourseTable(); //calls function to initially load course dropdown choice
             } // end of CALLBACK function
         ); // end of call to $.getJSON                 
 
