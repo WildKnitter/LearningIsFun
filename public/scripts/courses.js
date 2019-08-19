@@ -53,13 +53,14 @@ $(function() {
                 function(data) {
                     objs = data;
                     $("#courseTableHead").empty();
-                    let markupHeader = "<tr><th>" + "Course ID" + "</th><th>" + "Course Name" + "</th><th>" + "Link" + "</th></tr>";
+                    let markupHeader = "<tr><th>" + "Course ID" + "</th><th>" + "Course Name" + "</th><th>" + "Manage" + "</th><th>" + " " + "</th></tr>";
                     $("#courseTableHead").append(markupHeader);
                     $("#courseTableHead").css("font-weight", "bold");
                     $("#courseTableBody").empty();
                     for (let i = 0; i < objs.length; i++) {
                         let url = "details.html?courseid=" + objs[i].CourseId;
-                        let markupBody = "<tr><td>" + objs[i].CourseId + "</td><td>" + objs[i].Title + "</td><td><a href=" + url + ">View Details</a></td >< /tr>";
+                        let urledit = "detailsedit.html?courseid=" + objs[i].CourseId;
+                        let markupBody = "<tr><td>" + objs[i].CourseId + "</td><td>" + objs[i].Title + "</td><td><a href=" + url + ">View</a></td ><td><a href=" + urledit + ">Edit</a></td></tr>";
                         $("#courseTableBody").append(markupBody);
                     } // end of for
                 } // end of CALLBACK function
@@ -76,13 +77,14 @@ $(function() {
                 function(data) {
                     objs = data;
                     $("#courseTableHead").empty();
-                    let markupHeader = "<tr><th>" + "Course ID" + "</th><th>" + "Course Name" + "</th><th>" + "Link" + "</th></tr>";
+                    let markupHeader = "<tr><th>" + "Course ID" + "</th><th>" + "Course Name" + "</th><th>" + "Manage" + "</th><th>" + " " + "</th></tr>";
                     $("#courseTableHead").append(markupHeader);
                     $("#courseTableHead").css("font-weight", "bold");
                     $("#courseTableBody").empty();
                     for (let i = 0; i < objs.length; i++) {
                         let url = "details.html?courseid=" + objs[i].CourseId;
-                        let markupBody = "<tr><td>" + objs[i].CourseId + "</td><td>" + objs[i].Title + "</td><td><a href=" + url + ">View Details</a></td >< /tr>";
+                        let urledit = "detailsedit.html?courseid=" + objs[i].CourseId;
+                        let markupBody = "<tr><td>" + objs[i].CourseId + "</td><td>" + objs[i].Title + "</td><td><a href=" + url + ">View</a></td> <td><a href=" + urledit + ">Edit</a></td ></tr>";
                         $("#courseTableBody").append(markupBody);
                     } // end of for
                 } // end of CALLBACK function
