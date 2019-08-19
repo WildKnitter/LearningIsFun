@@ -76,6 +76,11 @@ fieldset {
 
 form {
     text-align: left;
+    padding: 25px;
+}
+
+label {
+    font-weight: bold;
 }
 
 
@@ -152,6 +157,14 @@ form {
         font-style: italic;
         color: white;
     }
+    #imgcalculator {
+        background-image: url("../images/calculator_medium.jpg");
+        width: 200px;
+        height: 200px;
+        background-repeat: no-repeat;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 
@@ -161,6 +174,14 @@ form {
     #subHeading {
         font-style: italic;
         color: white;
+    }
+    #imgcalculator {
+        background-image: url("../images/calculator_medium.jpg");
+        width: 200px;
+        height: 200px;
+        background-repeat: no-repeat;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 
@@ -172,6 +193,14 @@ form {
         font-style: italic;
         color: black;
     }
+    #imgcalculator {
+        background-image: url("../images/calculator_large.jpg");
+        width: 300px;
+        height: 300px;
+        background-repeat: no-repeat;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 
@@ -182,6 +211,14 @@ form {
         font-style: italic;
         color: black;
     }
+    #imgcalculator {
+        background-image: url("../images/calculator_large.jpg");
+        width: 300px;
+        height: 300px;
+        background-repeat: no-repeat;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 
@@ -191,5 +228,13 @@ form {
     #subHeading {
         font-style: italic;
         color: black;
+    }
+    #imgcalculator {
+        background-image: url("../images/calculator_large.jpg");
+        width: 300px;
+        height: 300px;
+        background-repeat: no-repeat;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
