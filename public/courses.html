@@ -33,23 +33,22 @@
         </div>
     </nav>
     <!--Top Navigation Bar End-->
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron2">
-        <div class="container">
-            <header>
-                <h1 class="display-3">LEARNING IS FUN!</h1>
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <h2 id="subHeading">Course Catelog</h2>
-                    </div>
-                </div>
-                <!--row end-->
-            </header>
-        </div>
-        <!--container end -->
-    </div>
-    <!--Junbotron heading end -->
 
+    <!--Heading-->
+    <div class="container">
+        <header>
+            <h1 class="display-3">Learning is Fun!</h1>
+        </header>
+    </div>
+    <!--container end -->
+
+    <!--Subheading-->
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 id="subHeading">Course Catelog</h2>
+        </div>
+    </div>
+    <!--row end-->
 
     <!--Course Category Dropdown Selection-->
     <form id="courseForm" name="courseForm" method="GET" action="#">
@@ -57,6 +56,7 @@
             <div class="col-md-4 offset-md-3">
                 <p>Select a Course by Category</p>
                 <select id="courseChoice" name="courseChoice">
+                <option value="zero" selected>Select One</option>
             </select>
             </div>
             <div class="col-md-4">

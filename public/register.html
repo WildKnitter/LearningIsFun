@@ -33,8 +33,9 @@
         </div>
     </nav>
     <!--Top Navigation Bar End-->
+
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron2">
+    <div class="jumbotron">
         <div class="container">
             <header>
                 <h1 class="display-3">LEARNING IS FUN!</h1>
@@ -49,40 +50,28 @@
         <!--container end -->
     </div>
     <!--Junbotron heading end -->
-
     <!--Buttons-->
     <div class="row">
         <div class="col-md-4 offset-md-5">
             <div id="registrationButtons" class="container">
                 <input class="btn btn-md btn-success" id="btnRegisterForCourse" name="btnRegisterForCourse" type="button" value="Register!">
                 <input class="btn btn-md btn-secondary" id="btnCancel" name="btnCancel" type="button" value="Cancel">
-                <br /><br />
             </div>
         </div>
     </div>
 
-    <h2>Please Fill In Form below</h2>
+    <h3>Please Fill In Form below</h3>
 
     <!--Registration Form-->
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-10 offset-md-2">
             <form id="registrationForm" name="registrationForm" method="POST" action="index.html">
-                <table id="registrationTable" class="table table-bordered">
-                    <tbody id="courseTableBody">
-                        <tr class="firstRow">
-                            <td>Course ID</td>
-                            <td><input id="courseid" name="courseid" readonly></td>
-                        </tr>
-                        <tr>
-                            <td>Student Name</td>
-                            <td><input id="studentname" name="studentname" placeholder="John Smith" autofocus required></td>
-                        </tr>
-                        <tr>
-                            <td>Email Address</td>
-                            <td><input id="email" name="email" placeholder="johnsmith@email.com" required></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <label for="courseid">Course ID</label>
+                <input id="courseid" name="courseid" readonly>
+                <label for="studentname">Student Name</label>
+                <input id="studentname" name="studentname" placeholder="John Smith" autofocus required>
+                <label for="email">Email Address</label>
+                <input id="email" name="email" placeholder="johnsmith@email.com" required>
             </form>
         </div>
     </div>
@@ -93,8 +82,6 @@
             <div id="msgDiv"></div>
         </div>
     </div>
-    <br /><br />
-
 
     <footer class="container">
         <p>&copy; Pam Belknap 2019</p>
