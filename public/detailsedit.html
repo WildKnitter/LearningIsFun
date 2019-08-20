@@ -44,57 +44,42 @@
 
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h2 id="subHeading">Course Details</h2>
+            <h2 id="subHeading">Update Course Details</h2>
         </div>
     </div>
     <!--row end-->
 
-    <!--Register Button -->
+    <!--Edit and Cancel Buttons -->
     <div class="row">
         <div class="col-lg-4 offset-lg-4 justifycenter">
-            <div id="registerButton" class="container">
-                <input class="btn btn-lg btn-success" id="btnRegister" name="btnRegister" type="button" value="Register Here!">
+            <div id="updateCancelButtons" class="container">
+                <input class="btn btn-md btn-success" id="btnUpdateCourse" name="btnUpdateCourse" type="button" value="Update">
+                <input class="btn btn-md btn-secondary" id="btnCancelUpdate" name="btnCancelUpdate" type="button" value="Cancel">
             </div>
+        </div>
+    </div>
+    <!--End Edit and Cancel Buttons -->
+
+    <!--Message Div for updates-->
+    <div class="row">
+        <div class="col-md-6 offset-md-4">
+            <div id="msgDiv"></div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-4 offset-md-4 formContainer">
-            <!--Table for Course -->
-            <form id="detailsFormEdit" name="detailsFormEdit" method="post" action="#">
+            <!-- Details Form to Edit -->
+            <form id="detailsFormEdit" name="detailsFormEdit" method="post" action="/api/courses">
                 <div id="detailsFormCreate">
-                    <div class="form-group">
-                        <label for="CourseId">Course ID:</label>
-                        <input type="text" class="form-control" id="courseId" name="courseid">
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Category:</label>
-                        <input type="text" class="form-control" id="category" name="category">
-                    </div>
-                    <div class="form-group">
-                        <label for="location">Location:</label>
-                        <input type="text" class="form-control" id="location" name="location">
-                    </div>
-                    <div class="form-group">
-                        <label for="startDate">Start Date:</label>
-                        <input type="text" class="form-control" id="startDate" name="startdate">
-                    </div>
-                    <div class="form-group">
-                        <label for="endDate">End Date:</label>
-                        <input type="text" class="form-control" id="endDate" name="enddate">
-                    </div>
-                    <div class="form-group">
-                        <label for="meets">Days and Time:</label>
-                        <input type="text" class="form-control" id="meets" name="meets">
-                    </div>
-                    <div class="form-group">
-                        <label for="fee">Class Fee:</label>
-                        <input type="text" class="form-control" id="fee" name="fee">
-                    </div>
                 </div>
+                <!-- End of detailsFormCreate -->
             </form>
+            <!-- End of Details Form to Edit -->
         </div>
+        <!-- End Classes for Columns -->
     </div>
+    <!-- End Row -->
 
     <footer class="container">
         <p>&copy; Pam Belknap 2019</p>
@@ -105,7 +90,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!--External js script-->
-    <!--    <script src="scripts/detailsedit.js"></script> -->
+    <script src="scripts/detailsedit.js"></script>
 </body>
 
 </html>

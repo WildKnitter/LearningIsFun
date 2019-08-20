@@ -39,56 +39,108 @@ $(function() {
                     function createDetailTable() {
                         let urlParams = new URLSearchParams(location.search);
                         let chosenDetail = urlParams.get("courseid");
-                        let url = "register.html?courseid=" + chosenDetail;
-
-                        $("#courseTableBody").empty();
+                        $("#detailsFormCreate").empty();
                         for (let i = 0; i < objs.length; i++) {
                             if (chosenDetail == objs[i].CourseId) {
-                                let markupBody0 = "<tr><td class='firstRow'>" + "Course ID" + "</td><td class='firstRow'>" + objs[i].CourseId + "</td></tr>";
-                                $("#courseTableBody").append(markupBody0);
-                                let markupBody1 = "<tr><td>" + "Course Name" + "</td><td id='title'>" + objs[i].Title + "</td></tr>";
-                                $("#courseTableBody").append(markupBody1);
-                                let markupBody2 = "<tr><td>" + "Category" + "</td><td id='category'>" + objs[i].Category + "</td></tr>";
-                                $("#courseTableBody").append(markupBody2);
-                                let markupBody3 = "<tr><td>" + "Location" + "</td><td id='location'>" + objs[i].Location + "</td></tr>";
-                                $("#courseTableBody").append(markupBody3);
-                                let markupBody4 = "<tr><td>" + "Start Date" + "</td><td id='startdate'>" + objs[i].StartDate + "</td></tr>";
-                                $("#courseTableBody").append(markupBody4);
-                                let markupBody5 = "<tr><td>" + "End Date" + "</td><td id='enddate'>" + objs[i].EndDate + "</td></tr>";
-                                $("#courseTableBody").append(markupBody5);
-                                let markupBody6 = "<tr><td>" + "Days and Time" + "</td><td id='meets'>" + objs[i].Meets + "</td></tr>";
-                                $("#courseTableBody").append(markupBody6);
-                                let markupBody7 = "<tr><td>" + "Class Fee" + "</td><td id='fee'>" + objs[i].Fee + "</td></tr>";
-                                $("#courseTableBody").append(markupBody7);
-                                let markupBody8 = "<tr><td>" + "Students Registered" + "</td><td id='studentCnt'></td></tr>";
-                                $("#courseTableBody").append(markupBody8);
-                                if (objs[i].Students.length == 0) {
-                                    $("#studentCnt").html("No Students Registered");
-                                    $("#studentsTable").hide();
-                                } else {
-                                    $("#studentCnt").html(objs[i].Students.length);
-                                }
-                                $("#studentTableHead").empty();
-                                let markupHeader = "<tr><th>" + "Student Name" + "</th><th>" + "Student Email" + "</th></tr>";
-                                $("#studentTableHead").append(markupHeader);
-                                $("#studentTableHead").css("font-weight", "bold");
-                                $("#studentTableBody").empty();
-                                for (let j = 0; j < objs[i].Students.length; j++) {
-                                    let markupBody9 = "<tr><td>" + objs[i].Students[j].StudentName + "</td><td>" + objs[i].Students[j].Email + "</td></tr>";
-                                    $("#studentTableBody").append(markupBody9);
-                                } // end of if for student table load
+                                let markupBody0 = "<div class='form-group'><label for='courseId'>Course ID:</label><input type='text' class='form-control' id='courseId' name='courseid' value = '" + objs[i].CourseId + "' readonly></div>";
+                                $("#detailsFormCreate").append(markupBody0);
+
+                                let markupBody1 = "<div class='form-group'><label for='title'>Title:</label><input type='text' class='form-control' id='title' name='title' value = '" + objs[i].Title + "' ></div>";
+                                $("#detailsFormCreate").append(markupBody1);
+
+                                let markupBody2 = "<div class='form-group'><label for='category'>Category:</label><input type='text' class='form-control' id='category' name='category' value = '" + objs[i].Category + "' readonly></div>";
+                                $("#detailsFormCreate").append(markupBody2);
+
+                                let markupBody3 = "<div class='form-group'><label for='location'>Location:</label><input type='text' class='form-control' id='location' name='location' value = '" + objs[i].Location + "' ></div>";
+                                $("#detailsFormCreate").append(markupBody3);
+
+                                let markupBody4 = "<div class='form-group'><label for='startDate'>Start Date:</label><input type='text' class='form-control' id='startDate' name='startdate' value = '" + objs[i].StartDate + "' ></div>";
+                                $("#detailsFormCreate").append(markupBody4);
+
+                                let markupBody5 = "<div class='form-group'><label for='endDate'>End Date:</label><input type='text' class='form-control' id='endDate' name='enddate' value = '" + objs[i].EndDate + "' ></div>";
+                                $("#detailsFormCreate").append(markupBody5);
+
+                                let markupBody6 = "<div class='form-group'><label for='meets'>Days and Time:</label><input type='text' class='form-control' id='meets' name='meets' value = '" + objs[i].Meets + "' ></div>";
+                                $("#detailsFormCreate").append(markupBody6);
+
+                                let markupBody7 = "<div class='form-group'><label for='fee'>Class Fee:</label><input type='text' class='form-control' id='fee' name='fee' value = '" + objs[i].Fee + "' ></div>";
+                                $("#detailsFormCreate").append(markupBody7);
                             } // end of if for table load
                         } // end of for (table)
-
-                        $("#btnRegister").on("click", registerForCourse);
-                        // when the REGISTER button is clicked, the url created in 
-                        // the function createDetailTable sends the user to the
-                        // registration page.
-                        function registerForCourse() {
-                            location.href = url;
-                        } // end of registerForCourse Function
-                    } // end of function
+                    } // end of createDetailTable function
                 } // end of function(data)
+
             ) // end of .getJSON
+
+        $("#btnUpdateCourse").on("click", updateCourse);
+        $("#btnCancelUpdate").on("click", cancelUpdates);
+
+        //when ADD button is clicked:
+        function updateCourse() {
+            let errMsgs = validateForm();
+            $("#msgDiv").empty();
+            if (errMsgs.length > 0) {
+                let msg = "";
+                for (let i = 0; i < errMsgs.length; i++) {
+                    msg = msg + errMsgs[i] + "<br>"
+                }
+                $("#msgDiv").html(msg);
+                return false;
+            }
+            // EDIT A COURSE
+            {
+                $.ajax({
+                        url: "api/courses", // your api url
+                        data: $("#detailsFormEdit").serialize(), // id of your form
+                        method: "PUT", // method is any HTTP method
+                        success: function() {
+                                alert("Working!");
+                                location.href = "details.html?courseid=" + $("#courseId").val();
+                            } // end of success function
+                    }) // end of ajax PUT
+                    .fail(function() {
+                        alert("Didn't Update!");
+                        location.href = "courses.html";
+                    }); // end of fail function
+            } // end of EDIT A COURSE
+        } // end of updateCourse function
+
+        //Validate the form
+        function validateForm() {
+            let errMsgs = [];
+            let dateReg = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+            if ($("#title").val().trim() == "") {
+                errMsgs[errMsgs.length] = "Course Name is REQUIRED";
+            }
+            if ($("#location").val().trim() == "") {
+                errMsgs[errMsgs.length] = "Location is REQUIRED";
+            }
+            if ($("#startDate").val().trim() == "") {
+                errMsgs[errMsgs.length] = "Start Date is REQUIRED";
+            }
+            if (dateReg.test($("#startDate").val()) == false) {
+                errMsgs[errMsgs.length] = "Start Date needs to be in mm/dd/yy format!";
+            }
+            if ($("#endDate").val().trim() == "") {
+                errMsgs[errMsgs.length] = "End Date is REQUIRED";
+            }
+            if (dateReg.test($("#endDate").val()) == false) {
+                errMsgs[errMsgs.length] = "End Date needs to be in mm/dd/yy format!";
+            }
+            if ($("#meets").val().trim() == "") {
+                errMsgs[errMsgs.length] = "Day and Time Information is REQUIRED";
+            }
+            if ($("#fee").val().trim() == "") {
+                errMsgs[errMsgs.length] = "Class Fee is REQUIRED";
+            }
+            return errMsgs;
+        } // end of validateForm function
+
+        //when CANCEL button is clicked:
+        function cancelUpdates() {
+            location.reload();
+            $("#msgDiv").html("Action Canceled");
+            location.href = "courses.html";
+        }; // end of Cancel Function
 
     }) // end of READY EVENT HANDLER

@@ -406,6 +406,7 @@ app.put(
             "coursesOffered.json",
             'utf8');
 
+        //This loads the file
         data = JSON.parse(data);
 
         // Find the course
