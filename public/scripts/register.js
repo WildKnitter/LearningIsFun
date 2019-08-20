@@ -48,10 +48,10 @@ function registerForCourse() {
 //Validate the form
 function validateForm() {
     let errMsgs = [];
-    if ($("#studentname").val() == "") {
+    if ($("#studentname").val().trim() == "") {
         errMsgs[errMsgs.length] = "Name is REQUIRED";
     }
-    if ($("#email").val() == "") {
+    if ($("#email").val().trim() == "") {
         errMsgs[errMsgs.length] = "Email Address is REQUIRED";
     }
     return errMsgs;

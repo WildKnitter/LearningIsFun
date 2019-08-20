@@ -53,7 +53,7 @@ function addNewCourse() {
         return false;
     }
     $.post("api/courses", $("#detailsInputForm").serialize(), function(data) {
-        location.href = "details.html?courseid=" + $("#courseid").val();
+        location.href = "details.html?courseid=" + $("#courseId").val();
     }); // end of post
     return false;
 } // end of registerForCourse function
@@ -61,25 +61,32 @@ function addNewCourse() {
 //Validate the form
 function validateForm() {
     let errMsgs = [];
-    if ($("#courseId").val() == "") {
+    let dateReg = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+    if ($("#courseId").val().trim() == "") {
         errMsgs[errMsgs.length] = "Course Number is REQUIRED";
     }
-    if ($("#title").val() == "") {
+    if ($("#title").val().trim() == "") {
         errMsgs[errMsgs.length] = "Course Name is REQUIRED";
     }
-    if ($("#location").val() == "") {
+    if ($("#location").val().trim() == "") {
         errMsgs[errMsgs.length] = "Location is REQUIRED";
     }
-    if ($("#startDate").val() == "") {
+    if ($("#startDate").val().trim() == "") {
         errMsgs[errMsgs.length] = "Start Date is REQUIRED";
     }
-    if ($("#endDate").val() == "") {
+    if (dateReg.test($("#startDate").val()) == false) {
+        errMsgs[errMsgs.length] = "Start Date needs to be in mm/dd/yy format!";
+    }
+    if ($("#endDate").val().trim() == "") {
         errMsgs[errMsgs.length] = "End Date is REQUIRED";
     }
-    if ($("#meets").val() == "") {
+    if (dateReg.test($("#endDate").val()) == false) {
+        errMsgs[errMsgs.length] = "End Date needs to be in mm/dd/yy format!";
+    }
+    if ($("#meets").val().trim() == "") {
         errMsgs[errMsgs.length] = "Day and Time Information is REQUIRED";
     }
-    if ($("#fee").val() == "") {
+    if ($("#fee").val().trim() == "") {
         errMsgs[errMsgs.length] = "Class Fee is REQUIRED";
     }
     return errMsgs;
