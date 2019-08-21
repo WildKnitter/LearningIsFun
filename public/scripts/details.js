@@ -40,6 +40,7 @@ $(function() {
                         let urlParams = new URLSearchParams(location.search);
                         let chosenDetail = urlParams.get("courseid");
                         let url = "register.html?courseid=" + chosenDetail;
+                        let urlunreg = "unregister.html?courseid=" + chosenDetail;
 
                         $("#courseTableBody").empty();
                         for (let i = 0; i < objs.length; i++) {
@@ -69,12 +70,12 @@ $(function() {
                                     $("#studentCnt").html(objs[i].Students.length);
                                 }
                                 $("#studentTableHead").empty();
-                                let markupHeader = "<tr><th>" + "Student Name" + "</th><th>" + "Student Email" + "</th></tr>";
+                                let markupHeader = "<tr><th>Student Name</th><th>Student Email</th><th>Unregister</th></tr>";
                                 $("#studentTableHead").append(markupHeader);
                                 $("#studentTableHead").css("font-weight", "bold");
                                 $("#studentTableBody").empty();
                                 for (let j = 0; j < objs[i].Students.length; j++) {
-                                    let markupBody9 = "<tr><td>" + objs[i].Students[j].StudentName + "</td><td>" + objs[i].Students[j].Email + "</td></tr>";
+                                    let markupBody9 = "<tr><td>" + objs[i].Students[j].StudentName + "</td><td>" + objs[i].Students[j].Email + "</td><td><a class='mr-2' title='Unregister' href=" + urlunreg + "><i class='fas fa-trash-alt fa-lg' aria-hidden='true'></i></a></tr>";
                                     $("#studentTableBody").append(markupBody9);
                                 } // end of if for student table load
                             } // end of if for table load
