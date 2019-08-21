@@ -53,14 +53,14 @@ $(function() {
                 function(data) {
                     objs = data;
                     $("#courseTableHead").empty();
-                    let markupHeader = "<tr><th>" + "Course ID" + "</th><th>" + "Course Name" + "</th><th>" + "Manage" + "</th><th>" + " " + "</th></tr>";
+                    let markupHeader = "<tr><th>" + "Course ID" + "</th><th>" + "Course Name" + "</th><th>" + "View" + "</th><th>" + "Edit" + "</th></tr>";
                     $("#courseTableHead").append(markupHeader);
                     $("#courseTableHead").css("font-weight", "bold");
                     $("#courseTableBody").empty();
                     for (let i = 0; i < objs.length; i++) {
                         let url = "details.html?courseid=" + objs[i].CourseId;
                         let urledit = "detailsedit.html?courseid=" + objs[i].CourseId;
-                        let markupBody = "<tr><td>" + objs[i].CourseId + "</td><td>" + objs[i].Title + "</td><td><a href=" + url + ">View</a></td ><td><a href=" + urledit + ">Edit</a></td></tr>";
+                        let markupBody = "<tr><td>" + objs[i].CourseId + "</td><td>" + objs[i].Title + "</td><td><a class='mr-2' title='View' href=" + url + "><i class='fas fa-binoculars fa-lg' aria-hidden='true'></i></a></td ><td><a class='edit mr-2' title='Edit' href=" + urledit + "><i class='fa fa-pencil-alt fa-lg' aria-hidden='true'></i></a></td></tr>";
                         $("#courseTableBody").append(markupBody);
                     } // end of for
                 } // end of CALLBACK function
@@ -77,14 +77,14 @@ $(function() {
                 function(data) {
                     objs = data;
                     $("#courseTableHead").empty();
-                    let markupHeader = "<tr><th>" + "Course ID" + "</th><th>" + "Course Name" + "</th><th>" + "Manage" + "</th><th>" + " " + "</th></tr>";
+                    let markupHeader = "<tr><th>" + "Course ID" + "</th><th>" + "Course Name" + "</th><th>" + "View" + "</th><th>" + "Edit" + "</th></tr>";
                     $("#courseTableHead").append(markupHeader);
                     $("#courseTableHead").css("font-weight", "bold");
                     $("#courseTableBody").empty();
                     for (let i = 0; i < objs.length; i++) {
                         let url = "details.html?courseid=" + objs[i].CourseId;
                         let urledit = "detailsedit.html?courseid=" + objs[i].CourseId;
-                        let markupBody = "<tr><td>" + objs[i].CourseId + "</td><td>" + objs[i].Title + "</td><td><a href=" + url + ">View</a></td> <td><a href=" + urledit + ">Edit</a></td ></tr>";
+                        let markupBody = "<tr><td>" + objs[i].CourseId + "</td><td>" + objs[i].Title + "</td><td><a class='mr-2' title='View' href=" + url + "><i class='fas fa-binoculars fa-lg' aria-hidden='true'></i></a></td ><td><a class='edit mr-2' title='Edit' href=" + urledit + "><i class='fa fa-pencil-alt fa-lg' aria-hidden='true'></i></a></td></tr>";
                         $("#courseTableBody").append(markupBody);
                     } // end of for
                 } // end of CALLBACK function
