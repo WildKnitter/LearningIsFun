@@ -117,6 +117,24 @@ label {
     display: inline;
 }
 
+
+/* Font Awesome color changes */
+
+.fa-pencil-alt {
+    color: darkgoldenrod;
+}
+
+.fa-binoculars {
+    color: darkblue;
+}
+
+.fa-trash-alt {
+    color: darkred;
+}
+
+
+/**********************************/
+
 .formContainer {
     padding: 15px;
 }
@@ -128,15 +146,18 @@ label {
 .justifycenter {
     text-align: center;
     font-weight: bold;
+    font-style: italic;
+    color: rgb(3, 3, 66);
+}
+
+.btnjustifycenter {
+    text-align: center;
+    font-weight: bold;
 }
 
 #errorMsg {
     color: red;
     font-weight: bold;
-}
-
-#courseDiv {
-    padding-top: 1.5em;
 }
 
 #courseLink {
@@ -147,7 +168,7 @@ label {
 #msgDiv {
     color: darkred;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.1em;
 }
 
 
@@ -157,6 +178,9 @@ label {
     #subHeading {
         font-style: italic;
         color: white;
+    }
+    #courseDiv {
+        padding-top: 1.5em;
     }
     #imgcalculator {
         background-image: url("../images/calculator_medium.jpg");
@@ -176,6 +200,9 @@ label {
         font-style: italic;
         color: white;
     }
+    #courseDiv {
+        padding-top: 1.5em;
+    }
     #imgcalculator {
         background-image: url("../images/calculator_medium.jpg");
         width: 200px;
@@ -193,6 +220,11 @@ label {
     #subHeading {
         font-style: italic;
         color: black;
+    }
+    #courseDiv {
+        padding-top: 1.5em;
+        padding-left: 3em;
+        padding-right: 3em;
     }
     #imgcalculator {
         background-image: url("../images/calculator_large.jpg");
@@ -212,6 +244,11 @@ label {
         font-style: italic;
         color: black;
     }
+    #courseDiv {
+        padding-top: 1.5em;
+        padding-left: 3em;
+        padding-right: 3em;
+    }
     #imgcalculator {
         background-image: url("../images/calculator_large.jpg");
         width: 300px;
@@ -229,6 +266,11 @@ label {
     #subHeading {
         font-style: italic;
         color: black;
+    }
+    #courseDiv {
+        padding-top: 1.5em;
+        padding-left: 3em;
+        padding-right: 3em;
     }
     #imgcalculator {
         background-image: url("../images/calculator_large.jpg");

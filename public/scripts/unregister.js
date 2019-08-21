@@ -17,24 +17,29 @@ objs[i].Fee
 objs[i].Students (its own array)
 "Students": [
             {
-                "StudentName": "Pam Belknap",
-                "Email": "pbelknap@cox.net"
+                "StudentName": "John Doe",
+                "Email": "johndoe@cox.net"
             }
         ]
 */
 
 //Ready Load
+// decodeURI used to decode the url string to get the course name, student name, and email address.
 $(function() {
     let urlParams = new URLSearchParams(location.search);
     let courseid = urlParams.get("courseid");
+    let studentname = urlParams.get("studentname");
+    let email = urlParams.get("email");
     $("#courseid").val(courseid);
-    $("#btnRegisterForCourse").on("click", registerForCourse);
+    $("#studentname").val(studentname);
+    $("#email").val(email);
+    $("#btnUnRegisterForCourse").on("click", unRegisterForCourse);
     $("#btnCancel").on("click", cancelUpdates);
 
 }); // end of Ready Load
 
 //when ADD button is clicked:
-function registerForCourse() {
+function unRegisterForCourse() {
     let errMsgs = validateForm();
     $("#msgDiv").empty();
     if (errMsgs.length > 0) {
@@ -45,7 +50,7 @@ function registerForCourse() {
         $("#msgDiv").html(msg);
         return false;
     }
-    $.post("api/register", $("#registrationForm").serialize(), function(data) {
+    $.post("api/unregister", $("#unRegisterForm").serialize(), function(data) {
         location.href = "details.html?courseid=" + $("#courseid").val();
     }); // end of post
     return false;
@@ -67,5 +72,5 @@ function validateForm() {
 function cancelUpdates() {
     location.reload();
     $("#msgDiv").html("Action Canceled");
-    location.href = "courses.html";
+    location.href = "details.html?courseid=" + $("#courseid").val();
 }; // end of Cancel Function

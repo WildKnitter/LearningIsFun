@@ -94,7 +94,7 @@ $(function() {
                         data: $("#detailsFormEdit").serialize(), // id of your form
                         method: "PUT", // method is any HTTP method
                         success: function() {
-                                alert("Working!");
+                                alert("Updated!");
                                 location.href = "details.html?courseid=" + $("#courseId").val();
                             } // end of success function
                     }) // end of ajax PUT
@@ -106,9 +106,12 @@ $(function() {
         } // end of updateCourse function
 
         //Validate the form
+        // Note: Need to add the forward slash to the front and back of regular 
+        // expressions to make them behave correctly when code is run. 
         function validateForm() {
             let errMsgs = [];
             let dateReg = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+            let numReg = /^\d{0,9}(\.\d{0,2})?$/;
             if ($("#title").val().trim() == "") {
                 errMsgs[errMsgs.length] = "Course Name is REQUIRED";
             }
@@ -133,6 +136,10 @@ $(function() {
             if ($("#fee").val().trim() == "") {
                 errMsgs[errMsgs.length] = "Class Fee is REQUIRED";
             }
+            if (numReg.test($("#fee").val()) == false) {
+                errMsgs[errMsgs.length] = "Fee is numeric and needs to be in a 9999.99 format!";
+            }
+
             return errMsgs;
         } // end of validateForm function
 
