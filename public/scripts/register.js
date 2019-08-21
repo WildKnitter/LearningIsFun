@@ -48,11 +48,15 @@ function registerForCourse() {
 //Validate the form
 function validateForm() {
     let errMsgs = [];
+    let emailReg = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/;
     if ($("#studentname").val().trim() == "") {
         errMsgs[errMsgs.length] = "Name is REQUIRED";
     }
     if ($("#email").val().trim() == "") {
         errMsgs[errMsgs.length] = "Email Address is REQUIRED";
+    }
+    if (emailReg.test($("#email").val()) == false) {
+        errMsgs[errMsgs.length] = "Email needs to be the correct format!";
     }
     return errMsgs;
 } // end of validateForm function
@@ -61,5 +65,5 @@ function validateForm() {
 function cancelUpdates() {
     location.reload();
     $("#msgDiv").html("Action Canceled");
-    location.href = "courses.html";
+    location.href = "details.html?courseid=" + $("#courseid").val();
 }; // end of Cancel Function

@@ -59,9 +59,12 @@ function addNewCourse() {
 } // end of registerForCourse function
 
 //Validate the form
+// Note: Need to add the forward slash to the front and back of regular 
+// expressions to make them behave correctly when code is run. 
 function validateForm() {
     let errMsgs = [];
     let dateReg = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+    let numReg = /^\d{0,9}(\.\d{0,2})?$/;
     if ($("#courseId").val().trim() == "") {
         errMsgs[errMsgs.length] = "Course Number is REQUIRED";
     }
@@ -89,6 +92,9 @@ function validateForm() {
     if ($("#fee").val().trim() == "") {
         errMsgs[errMsgs.length] = "Class Fee is REQUIRED";
     }
+    if (numReg.test($("#fee").val()) == false) {
+        errMsgs[errMsgs.length] = "Fee is numeric and needs to be in a 9999.99 format!";
+    }
     return errMsgs;
 } // end of validateForm function
 
@@ -96,5 +102,5 @@ function validateForm() {
 function cancelAdd() {
     location.reload();
     $("#msgDiv").html("Action Canceled");
-    location.href = "index.html";
+    location.href = "courses.html";
 }; // end of Cancel Function
